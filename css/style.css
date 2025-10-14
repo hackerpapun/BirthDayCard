@@ -8,10 +8,22 @@
 body {
   background: #e5e5e5;
   background-image: url("bg.jpg");
-  /* width: 100%;
-  height: 100%; */
   background-size: cover;
   background-position: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* prevent scrollbars after rotation */
+
+  /* Rotate the whole body */
+  transform: rotate(90deg);
+  transform-origin: center center;
+
+  /* To keep the layout centered on screen after rotation */
+  width: 100vh;
+  height: 100vw;
+  position: absolute;
+  top: 200px;
+  left: 0;
 }
 
 #card-front {
@@ -112,26 +124,14 @@ p.signed {
 
 #card-front {
   background-color: #ee9ca7;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#ff5555),
-    to(#ff7777)
-  );
-background-image: url("bgg.avif");
-  -webkit-transform-origin: left;
+  background-image: url("bgg.avif");
   transform-origin: left;
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
   transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
   position: relative;
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-perspective: 5000px;
   perspective: 5000px;
 }
+
 
 #card-front:before {
   position: absolute;
@@ -515,7 +515,7 @@ footer {
   background-color: #ffefef;
 }
 } */
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       #card {
         transform: rotate(90deg);
         transform-origin: center center;
@@ -530,4 +530,4 @@ footer {
   font-size: 1.1em;
  }
 
-    }
+    } */
